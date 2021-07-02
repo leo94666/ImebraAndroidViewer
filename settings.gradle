@@ -1,0 +1,3 @@
+rootProject.name = "Imebra-Android-Viewer"
+include ':app'
+include ':imebraLibrary'

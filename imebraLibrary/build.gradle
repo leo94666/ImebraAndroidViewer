@@ -1,0 +1,97 @@
+buildscript {
+
+    /**
+     * The repositories block configures the repositories Gradle uses to
+     * search or download the dependencies. Gradle pre-configures support for remote
+     * repositories such as JCenter, Maven Central, and Ivy. You can also use local
+     * repositories or define your own remote repositories. The code below defines
+     * JCenter as the repository Gradle should use to look for its dependencies.
+     *
+     * New projects created using Android Studio 3.0 and higher also include
+     * Google's Maven repository.
+     */
+
+    repositories {
+        google()
+        jcenter()
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:4.2.1'
+
+        // Unit testing dependencies
+    }
+}
+
+apply plugin: 'com.android.library'
+
+dependencies {
+    androidTestImplementation 'com.android.support:support-annotations:28.0.0'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test:rules:1.0.2'
+    // Optional -- Hamcrest library
+    androidTestImplementation 'org.hamcrest:hamcrest-library:1.3'
+    // Optional -- UI testing with Espresso
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    // Optional -- UI testing with UI Automator
+    androidTestImplementation 'com.android.support.test.uiautomator:uiautomator-v18:2.1.3'
+    androidTestImplementation 'junit:junit:4.12'
+    androidTestImplementation 'org.mockito:mockito-core:1.10.19'
+}
+
+
+android {
+    repositories {
+        maven { url 'http://repo1.maven.org/maven2' }
+    }
+
+    compileSdkVersion 26
+    defaultConfig {
+        minSdkVersion 26
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+        externalNativeBuild {
+            ndkBuild {
+                arguments "NDK_APPLICATION_MK:=jni/Application.mk"
+            }
+        }
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    externalNativeBuild{
+        ndkBuild{
+            path "jni/Android.mk"
+        }
+    }
+
+    sourceSets {
+        main {
+            manifest.srcFile 'AndroidManifest.xml'
+            java {
+                srcDir 'src'
+            }
+        }
+        androidTest {
+            manifest.srcFile 'AndroidManifest.xml'
+            java {
+                srcDir 'javaTests/src'
+            }
+
+        }
+    }
+
+    libraryVariants.all { variant ->
+        variant.outputs.all { output ->
+            if (outputFile != null && outputFileName.endsWith('.aar')) {
+                outputFileName = "imebrajni5-${variant.buildType.name}.aar"
+            }
+        }
+    }
+}
+
+repositories {
+    google()
+    jcenter()
+}
+
+

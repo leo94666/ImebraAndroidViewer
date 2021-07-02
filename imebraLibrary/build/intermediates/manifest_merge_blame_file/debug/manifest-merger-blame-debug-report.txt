@@ -1,0 +1,13 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.imebra"
+4    android:versionCode="1"
+5    android:versionName="5.2.1.2" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="26"
+8-->/home/leo/AndroidStudioProjects/ImebraAndroidViewer/imebraLibrary/AndroidManifest.xml
+9        android:targetSdkVersion="26" />
+9-->/home/leo/AndroidStudioProjects/ImebraAndroidViewer/imebraLibrary/AndroidManifest.xml
+10
+11</manifest>
