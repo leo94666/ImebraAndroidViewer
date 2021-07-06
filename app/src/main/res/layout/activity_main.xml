@@ -4,66 +4,73 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".MainActivity">
 
 
+    <ImageView
+        android:id="@+id/iv"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:layout_margin="10dp"
+        android:layout_weight="1"
+        android:adjustViewBounds="false"
+        android:cropToPadding="false"
+        android:padding="0dp" />
 
-        <ImageView
-            android:id="@+id/iv"
-            android:layout_width="match_parent"
-            android:layout_height="500dp"
-            android:layout_margin="10dp"
-            android:layout_weight="1"
-            android:adjustViewBounds="false"
-            android:cropToPadding="false"
-            android:padding="0dp" />
+    <TextView
+        android:id="@+id/tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/iv"
+        android:layout_margin="10dp"
+        android:layout_weight="1" />
 
-        <TextView
-            android:id="@+id/tv"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_below="@id/iv"
-            android:layout_margin="10dp"/>
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv"
+        android:layout_margin="5dp"
+        android:layout_weight="1"
+        android:onClick="loadDicomFileClicked"
+        android:padding="0dp"
+        android:text="Load" />
+
+    <LinearLayout
+        android:id="@+id/ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/button"
+        android:layout_margin="5dp">
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/btn_pre"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:layout_weight="1"
-            android:onClick="loadDicomFileClicked"
+            android:onClick="pre"
             android:padding="0dp"
-            android:text="Load"
-            android:layout_below="@id/tv"/>
+            android:text="Pre" />
 
-        <LinearLayout
+        <Button
+            android:id="@+id/btn_next"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:layout_below="@id/button">
+            android:layout_weight="1"
+            android:onClick="next"
+            android:padding="0dp"
+            android:text="next" />
 
-                <Button
-                    android:id="@+id/btn_pre"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    android:layout_weight="1"
-                    android:onClick="pre"
-                    android:padding="0dp"
-                    android:text="Pre" />
+    </LinearLayout>
 
-                <Button
-                    android:id="@+id/btn_next"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    android:layout_weight="1"
-                    android:onClick="next"
-                    android:padding="0dp"
-                    android:text="next" />
-
-        </LinearLayout>
+    <TextView
+        android:id="@+id/tv_result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ll"
+        android:layout_centerInParent="true" />
 
 </RelativeLayout>

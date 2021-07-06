@@ -12,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.imebra.*
 import kotlinx.android.synthetic.main.activity_main.*
 import java.io.IOException
+import java.lang.Exception
 import java.nio.ByteBuffer
 
 class MainActivity : AppCompatActivity() {
@@ -34,7 +35,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     var selectedfile: Uri? = null
-    var count=0;
+    var count = 0;
+    var framesCount: Long = -1;
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
@@ -66,16 +68,24 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun pre(view: View) {
-        goToImg(--count)
+        if (count == 0) {
+            count = framesCount.toInt()
+        }
+        --count
 
+        goToImg(count)
     }
+
     fun next(view: View) {
-        goToImg(++count)
+        if (count + 1 == framesCount.toInt()) {
+            count = -1
+        }
+        ++count
+        goToImg(count)
     }
 
 
-
-    fun goToImg(index:Int){
+    fun goToImg(index: Int) {
         val stream = contentResolver.openInputStream(selectedfile!!)
 
         // The usage of the Pipe allows to use also files on Google Drive or other providers
@@ -86,11 +96,13 @@ class MainActivity : AppCompatActivity() {
         val pushThread = Thread(PushToImebraPipe(imebraPipe, stream))
         pushThread.start()
 
-
         val loadDataSet = CodecFactory.load(StreamReader(imebraPipe.streamInput))
-        Toast.makeText(this,"size: "+loadDataSet.tags.size,Toast.LENGTH_LONG).show()
 
+        val dicomEntity = DicomEntity.convert(loadDataSet)
 
+        framesCount = dicomEntity.numberOfFrames.toLong()
+
+        tv_result.text = dicomEntity.toString()
         // Get the first frame from the dataset (after the proper modality transforms
         // have been applied).
         val dicomImage = loadDataSet.getImageApplyModalityTransform(index.toLong())

@@ -45,10 +45,10 @@ android {
         maven { url 'http://repo1.maven.org/maven2' }
     }
 
-    compileSdkVersion 26
+    compileSdkVersion 30
     defaultConfig {
-        minSdkVersion 26
-        targetSdkVersion 26
+        minSdkVersion 23
+        targetSdkVersion 30
         versionCode 1
         versionName "1.0"
         externalNativeBuild {

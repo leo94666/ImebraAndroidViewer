@@ -5,9 +5,9 @@
 5    android:versionName="5.2.1.2" >
 6
 7    <uses-sdk
-8        android:minSdkVersion="26"
-8-->/home/leo/AndroidStudioProjects/ImebraAndroidViewer/imebraLibrary/AndroidManifest.xml
-9        android:targetSdkVersion="26" />
-9-->/home/leo/AndroidStudioProjects/ImebraAndroidViewer/imebraLibrary/AndroidManifest.xml
+8        android:minSdkVersion="23"
+8-->D:\liyang\ImebraAndroidViewer\imebraLibrary\AndroidManifest.xml
+9        android:targetSdkVersion="30" />
+9-->D:\liyang\ImebraAndroidViewer\imebraLibrary\AndroidManifest.xml
 10
 11</manifest>
