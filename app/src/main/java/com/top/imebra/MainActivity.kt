@@ -48,7 +48,9 @@ class MainActivity : AppCompatActivity() {
                 // Get the selected URI, then open an input stream
                 selectedfile = (data!!.data ?: return)
 
-                goToImg(count)
+                val loader = DicomLoader.getInstance().loader(this, selectedfile)
+                Toast.makeText(this,""+loader.size,Toast.LENGTH_LONG).show()
+            //goToImg(count)
 
             } catch (e: IOException) {
                 val dlgAlert = AlertDialog.Builder(this)

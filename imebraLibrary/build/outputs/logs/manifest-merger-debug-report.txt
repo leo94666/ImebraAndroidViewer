@@ -1,29 +1,29 @@
 -- Merging decision tree log ---
 manifest
-ADDED from D:\liyang\ImebraAndroidViewer\imebraLibrary\AndroidManifest.xml:2:1-7:12
-INJECTED from D:\liyang\ImebraAndroidViewer\imebraLibrary\AndroidManifest.xml:2:1-7:12
-INJECTED from D:\liyang\ImebraAndroidViewer\imebraLibrary\AndroidManifest.xml:2:1-7:12
+ADDED from /home/leo/AndroidStudioProjects/ImebraAndroidViewer/imebraLibrary/AndroidManifest.xml:2:1-7:12
+INJECTED from /home/leo/AndroidStudioProjects/ImebraAndroidViewer/imebraLibrary/AndroidManifest.xml:2:1-7:12
+INJECTED from /home/leo/AndroidStudioProjects/ImebraAndroidViewer/imebraLibrary/AndroidManifest.xml:2:1-7:12
 	package
-		ADDED from D:\liyang\ImebraAndroidViewer\imebraLibrary\AndroidManifest.xml:3:11-31
-		INJECTED from D:\liyang\ImebraAndroidViewer\imebraLibrary\AndroidManifest.xml
-		INJECTED from D:\liyang\ImebraAndroidViewer\imebraLibrary\AndroidManifest.xml
+		ADDED from /home/leo/AndroidStudioProjects/ImebraAndroidViewer/imebraLibrary/AndroidManifest.xml:3:11-31
+		INJECTED from /home/leo/AndroidStudioProjects/ImebraAndroidViewer/imebraLibrary/AndroidManifest.xml
+		INJECTED from /home/leo/AndroidStudioProjects/ImebraAndroidViewer/imebraLibrary/AndroidManifest.xml
 	android:versionName
-		ADDED from D:\liyang\ImebraAndroidViewer\imebraLibrary\AndroidManifest.xml:5:11-42
+		ADDED from /home/leo/AndroidStudioProjects/ImebraAndroidViewer/imebraLibrary/AndroidManifest.xml:5:11-42
 	xmlns:android
-		ADDED from D:\liyang\ImebraAndroidViewer\imebraLibrary\AndroidManifest.xml:2:11-69
+		ADDED from /home/leo/AndroidStudioProjects/ImebraAndroidViewer/imebraLibrary/AndroidManifest.xml:2:11-69
 	android:versionCode
-		ADDED from D:\liyang\ImebraAndroidViewer\imebraLibrary\AndroidManifest.xml:4:11-36
+		ADDED from /home/leo/AndroidStudioProjects/ImebraAndroidViewer/imebraLibrary/AndroidManifest.xml:4:11-36
 uses-sdk
-INJECTED from D:\liyang\ImebraAndroidViewer\imebraLibrary\AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from D:\liyang\ImebraAndroidViewer\imebraLibrary\AndroidManifest.xml
-INJECTED from D:\liyang\ImebraAndroidViewer\imebraLibrary\AndroidManifest.xml
-INJECTED from D:\liyang\ImebraAndroidViewer\imebraLibrary\AndroidManifest.xml
-INJECTED from D:\liyang\ImebraAndroidViewer\imebraLibrary\AndroidManifest.xml
+INJECTED from /home/leo/AndroidStudioProjects/ImebraAndroidViewer/imebraLibrary/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /home/leo/AndroidStudioProjects/ImebraAndroidViewer/imebraLibrary/AndroidManifest.xml
+INJECTED from /home/leo/AndroidStudioProjects/ImebraAndroidViewer/imebraLibrary/AndroidManifest.xml
+INJECTED from /home/leo/AndroidStudioProjects/ImebraAndroidViewer/imebraLibrary/AndroidManifest.xml
+INJECTED from /home/leo/AndroidStudioProjects/ImebraAndroidViewer/imebraLibrary/AndroidManifest.xml
 	android:targetSdkVersion
-		INJECTED from D:\liyang\ImebraAndroidViewer\imebraLibrary\AndroidManifest.xml
-		ADDED from D:\liyang\ImebraAndroidViewer\imebraLibrary\AndroidManifest.xml
-		INJECTED from D:\liyang\ImebraAndroidViewer\imebraLibrary\AndroidManifest.xml
+		INJECTED from /home/leo/AndroidStudioProjects/ImebraAndroidViewer/imebraLibrary/AndroidManifest.xml
+		ADDED from /home/leo/AndroidStudioProjects/ImebraAndroidViewer/imebraLibrary/AndroidManifest.xml
+		INJECTED from /home/leo/AndroidStudioProjects/ImebraAndroidViewer/imebraLibrary/AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from D:\liyang\ImebraAndroidViewer\imebraLibrary\AndroidManifest.xml
-		ADDED from D:\liyang\ImebraAndroidViewer\imebraLibrary\AndroidManifest.xml
-		INJECTED from D:\liyang\ImebraAndroidViewer\imebraLibrary\AndroidManifest.xml
+		INJECTED from /home/leo/AndroidStudioProjects/ImebraAndroidViewer/imebraLibrary/AndroidManifest.xml
+		ADDED from /home/leo/AndroidStudioProjects/ImebraAndroidViewer/imebraLibrary/AndroidManifest.xml
+		INJECTED from /home/leo/AndroidStudioProjects/ImebraAndroidViewer/imebraLibrary/AndroidManifest.xml
