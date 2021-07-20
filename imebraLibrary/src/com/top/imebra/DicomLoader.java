@@ -40,29 +40,57 @@ public class DicomLoader {
     public List<Bitmap> loader(Context context, Uri uri) {
         CodecFactory.setMaximumImageSize(8000, 8000);
         List<Bitmap> list = new ArrayList<>();
-
         try {
             InputStream inputStream = context.getContentResolver().openInputStream(uri);
             PipeStream imebraPipe = new PipeStream(32000);
-
             Thread pushThread = new Thread(new PushToImebraPipe(imebraPipe, inputStream));
             pushThread.start();
-
             DataSet loadDataSet = CodecFactory.load(new StreamReader(imebraPipe.getStreamInput()));
-
             DicomEntity dicomEntity = DicomEntity.convert(loadDataSet);
 
             for (int i = 0; i < dicomEntity.getNumberOfFrames(); i++) {
                 Bitmap bitmap = getBitmap(loadDataSet, i);
                 list.add(bitmap);
             }
-
-
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
-
         return list;
+    }
+
+
+    public void loaderAsync(Context context, Uri uri, OnLoaderProcessListener onLoaderProcessListener) {
+        new Thread(() -> {
+            CodecFactory.setMaximumImageSize(8000, 8000);
+            List<Bitmap> list = new ArrayList<>();
+            try {
+                InputStream inputStream = context.getContentResolver().openInputStream(uri);
+                PipeStream imebraPipe = new PipeStream(32000);
+                Thread pushThread = new Thread(new PushToImebraPipe(imebraPipe, inputStream));
+                pushThread.start();
+                DataSet loadDataSet = CodecFactory.load(new StreamReader(imebraPipe.getStreamInput()));
+                DicomEntity dicomEntity = DicomEntity.convert(loadDataSet);
+
+                for (int i = 0; i < dicomEntity.getNumberOfFrames(); i++) {
+                    Bitmap bitmap = getBitmap(loadDataSet, i);
+                    list.add(bitmap);
+                    if (i == 0) {
+                        if (onLoaderProcessListener != null) {
+                            onLoaderProcessListener.onPreLoader(bitmap);
+                        }
+                    }
+                }
+                if (onLoaderProcessListener != null) {
+                    onLoaderProcessListener.onLoadAll(list);
+                }
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+                if (onLoaderProcessListener != null) {
+                    onLoaderProcessListener.onLoadError(e);
+                }
+            }
+        }).start();
+
     }
 
     private Bitmap getBitmap(DataSet dataSet, int index) {
